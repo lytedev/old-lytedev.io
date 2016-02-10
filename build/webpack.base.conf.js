@@ -68,7 +68,6 @@ module.exports = {
       key = keys[i]
       config[key] = opts[key]
     }
-    console.log(config)
     return config
   }
 }
