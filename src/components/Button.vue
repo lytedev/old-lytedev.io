@@ -1,6 +1,7 @@
 <template lang="jade">
 
-  a.button.button--hollow(href="{{ href }}") {{ text }}
+  a.button.button--hollow(href="{{ href }}")
+    slot {{ text }}
 
 </template>
 
@@ -9,6 +10,7 @@
   @require '../assets/styles/mixins'
 
   .button
+    display block
     text-transform uppercase
     cursor pointer
     font-size 120%
@@ -32,6 +34,15 @@
       background-color #eee
       color #333
       text-shadow 0 0.05em 0.05em #fff
+
+  .button--inline
+    display inline
+
+  .button--block-if-mobile
+    display block
+
+    +first-breakpoint-post-response()
+      display inline
 
 </style>
 

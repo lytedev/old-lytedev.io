@@ -1,14 +1,14 @@
 <template lang="jade">
 
   .jumbotron
-    a(href="/"): img.icon(src="../assets/icon.png")
-    a(href="/"): img.banner(src="../assets/banner.png")
+    a(href="/" v-on:click.prevent="0"): img.icon(src="../assets/icon.png")
+    a(href="/" v-on:click.prevent="0"): img.banner(src="../assets/banner.png")
 
     .calls-to-action
-      cta-button(href="https://google.com" text="About Me")
-      cta-button(text="Get In Touch")
+      cta-button.button--inline.scroll-link(href="/about" text="About Me")
+      cta-button.button--inline.scroll-link(href="/contact" text="Get In Touch")
 
-    a: i.fa.fa-angle-down.fa-2x
+    next-section.scroll-link(href="/about")
 
 </template>
 
@@ -62,5 +62,6 @@
   module.exports =
     components:
       ctaButton: require './Button'
+      nextSection: require './NextSection'
 
 </script>
