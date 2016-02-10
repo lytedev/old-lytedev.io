@@ -25,6 +25,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: /\.jade$/,
+        loader: 'jade-loader'
+      },
+      {
         test: /\.js$/,
         loader: 'babel!eslint',
         exclude: /node_modules/

@@ -1,0 +1,8 @@
+@require './variables'
+
+transition-all()
+  transition all $transition-time ease
+
+first-breakpoint-response()
+  @media screen and (max-width: $first-breakpoint)
+    {block}
