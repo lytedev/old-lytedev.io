@@ -1,6 +1,6 @@
 # lytedev.io
 
-> A Vue.js project
+> The code that hosts my personal contact page.
 
 ## Build Setup
 
