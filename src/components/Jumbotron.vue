@@ -5,8 +5,10 @@
     a(href="/"): img.banner(src="../assets/banner.png")
 
     .calls-to-action
-      cta-button(text="Get In Touch")
       cta-button(href="https://google.com" text="About Me")
+      cta-button(text="Get In Touch")
+
+    a: i.fa.fa-angle-down.fa-2x
 
 </template>
 
@@ -34,15 +36,24 @@
     .icon
       max-width 10%
 
+      +first-breakpoint-response()
+        max-width 25%
+
     .banner
       max-width 50%
 
+      +first-breakpoint-response()
+        max-width 100%
+
     .calls-to-action
       margin-top 3em
+      margin-bottom 1.5em
 
-    +first-breakpoint-response()
-      display none
-      height 50vh
+      +first-breakpoint-response()
+        display flex
+        flex-direction column
+
+    /* +first-breakpoint-response() */
 
 </style>
 
