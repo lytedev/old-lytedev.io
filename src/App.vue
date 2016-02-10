@@ -21,14 +21,9 @@
       slot
         previous-section.scroll-link(href="#about")
 
-        p The internet is a universe of opportunity. I have a knack and a
-          | passion for building powerfully useful experiences that can
-          | greatly simplify lives or simply draw a crowd.
+        p The internet is a universe of opportunity. I have a knack and a passion for building powerful and highly useful, usable experiences that can greatly simplify lives or simply draw a crowd.
 
-        p Technology is an ever-changing and constantly-shifting field of
-          | work. I relish in the quick-moving world of deprecation and
-          | development cycles and am constantly searching for and trying to
-          | create the next cool thing.
+        p Technology is an ever-changing and constantly-shifting field of work. I relish in the quick-moving world of deprecation and development cycles and am constantly searching for and trying to create the next cool thing.
 
         p So this isn't just a job for me.
 
