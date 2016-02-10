@@ -1,6 +1,6 @@
 <template lang="jade">
 
-  a.next-section(v-bind:style="styles" href="{{ href }}"): i.fa.fa-angle-down.fa-2x
+  a.previous-section(v-bind:style="styles" href="{{ href }}"): i.fa.fa-angle-up.fa-2x
 
 </template>
 
@@ -8,7 +8,7 @@
 
   @require '../assets/styles/mixins'
 
-  .next-section
+  .previous-section
     text-align center
     display block
     color #fff

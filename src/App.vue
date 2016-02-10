@@ -4,14 +4,22 @@
     header
       jumbotron
 
-    content-block#about(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAd0lEQVQIWy2NwQ0CIQAEZxHOqC8L149XgMbEorAOY84D1iA+9jc7o/mRHWSOe0jRrEWsDUqB9yJei9Hlno1gm2BKIJnWoQqffiig0zUbIG5Mit0GCtCqKNWUqgH1pw0xDlvPSvolawOdb0/b/0QzUxSHHQRB89gXWmFCR2LOAacAAAAASUVORK5CYII=\")', textShadow: '0px 1px 1px rgba(255, 255, 255, 0.3)' }")
+    content-block#about(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAQklEQVQIWy2MMRGAQBDEkn0vb4UCN/hCASpQggI45hiqNEm8jrWIJIEMaBpg4LnNyhDzoEEF7090X2alS3tQBOGPXzP6C7P9CQ8hAAAAAElFTkSuQmCC\")', color: '#fff' }")
       slot
+        previous-section.scroll-link(href="#intro")
+
         h1.section-head Hello! My name is Daniel and I live in Kansas City,
           | Missouri.
 
         p I'm a freelance software engineer who specializes in web
           | technologies. I work with computers and the internet and love
           | every second of it.
+
+        next-section.scroll-link(:styles="" href="#belief")
+
+    content-block#belief(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAATUlEQVQIWwXBwQ2AMAwEwb1gE6UPvjxpiA4QJVAAEt0iEpsZ7deSc61Ud2wyhIAgMtD5bAkJDCI+xuhIHTOh414zeCnlAw3cJ1preDV+MM8XuG3wAlMAAAAASUVORK5CYII=\")', color: '#fff' }")
+      slot
+        previous-section.scroll-link(href="#about")
 
         p The internet is a universe of opportunity. I have a knack and a
           | passion for building powerfully useful experiences that can
@@ -26,10 +34,11 @@
 
         h2 I thrive here!
 
-        next-section.scroll-link(:styles="{ color: '#333' }" href="/contact")
+        next-section.scroll-link(:styles="" href="#contact")
 
-    content-block#contact(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAATUlEQVQIWwXBwQ2AMAwEwb1gE6UPvjxpiA4QJVAAEt0iEpsZ7deSc61Ud2wyhIAgMtD5bAkJDCI+xuhIHTOh414zeCnlAw3cJ1preDV+MM8XuG3wAlMAAAAASUVORK5CYII=\")', color: '#fff', textShadow: '0px 1px 1px rgba(0, 0, 0, 0.5)' }")
+    content-block#contact(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAVUlEQVQIWyXDQQpAUBCA4X/Mmzs4hUu4gXtZKldwIJGUsnyJt6As1Ei++qRvaz+PRJxG4jxwpw0NGRoM6arS93XhuS9MjcwUxxFAmiL3YAFEwR34/l5oxxzFTbgXwgAAAABJRU5ErkJggg==\")', color: '#fff', textShadow: '0px 1px 1px rgba(0, 0, 0, 0.5)' }")
       slot
+        previous-section.scroll-link(href="#belief")
 
         p If you're looking for a software engineer or web developer and
           = "need convincing that I'm worth contacting, you can "
@@ -45,6 +54,7 @@
           | if you're a business or organization here in Kansas City looking to
           | have website or software work done! If you'd like, here are some
           | links to some of my stuff.
+
 
         hr
 
@@ -65,22 +75,34 @@
         //-  @lytedev on Telegram
         //-  Email daniel@lytedev.io
 
-        hr
+        //- hr
 
-        next-section.scroll-link(href="/contact")
-
-  script(src="//code.jquery.com/jquery-2.2.0.min.js")
-  script(src="./assets/scripts/site.coffee")
+        //- next-section.scroll-link(href="#contact")
 
 </template>
 
 <script lang="coffee">
+
+  jQuery = require 'jquery'
+
+  jQuery ->
+    jQuery('a[href*="#"]:not([href="#"])').click (event) ->
+      if location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//,'') and location.hostname == this.hostname
+        target = jQuery this.hash
+        console.log target
+        if target.length
+          event.preventDefault()
+          jQuery('html, body').animate
+            scrollTop: target.offset().top
+          , 1000
+          return false
 
   module.exports =
     components:
       jumbotron: require './components/Jumbotron'
       contentBlock: require './components/ContentBlock'
       nextSection: require './components/NextSection'
+      previousSection: require './components/PreviousSection'
       ctaButton: require './components/Button.vue'
 
 </script>
@@ -121,7 +143,7 @@
 
   .wrapper
     max-width $max-wrapped-width
-    padding 0.5em
+    padding 1em
     margin 0 auto
 
 </style>

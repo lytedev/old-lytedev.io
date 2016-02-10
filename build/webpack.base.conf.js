@@ -25,6 +25,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: /\.coffee$/,
+        loader: 'coffee-loader'
+      },
+      {
         test: /\.jade$/,
         loader: 'jade-loader'
       },
