@@ -20,12 +20,10 @@ npm test
 
 ## To Do
 
-* Favicon
-* Fade in content pieces
 * Privacy policy
-* Google analytics
 * Setup server with
     * Node
     * SSL (via Let's Encrypt!)
     * Slick deployment system
+* Fade in content pieces
 

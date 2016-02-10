@@ -42,7 +42,7 @@ module.exports = {
         loader: 'json'
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|ico)$/,
         loader: 'url',
         query: {
           limit: 10000,
@@ -58,5 +58,17 @@ module.exports = {
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
+  },
+  htmlOptions: opts => {
+    config = {
+      favicon: "./src/assets/favicon.ico"
+    }
+    keys = Object.keys(opts)
+    for (i in keys) {
+      key = keys[i]
+      config[key] = opts[key]
+    }
+    console.log(config)
+    return config
   }
 }

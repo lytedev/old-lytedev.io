@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var config = require('./webpack.base.conf')
+var jquery = require('jquery')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -48,7 +49,7 @@ config.plugins = (config.plugins || []).concat([
   // generate dist index.html with correct asset hash for caching.
   // you can customize output by editing /src/index.html
   // see https://github.com/ampedandwired/html-webpack-plugin
-  new HtmlWebpackPlugin({
+  new HtmlWebpackPlugin(config.htmlOptions({
     filename: '../index.html',
     template: 'src/index.jade',
     inject: true,
@@ -59,7 +60,7 @@ config.plugins = (config.plugins || []).concat([
       // more options:
       // https://github.com/kangax/html-minifier#options-quick-reference
     }
-  })
+  }))
 ])
 
 module.exports = config

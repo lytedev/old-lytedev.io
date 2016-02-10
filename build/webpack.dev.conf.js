@@ -23,11 +23,11 @@ config.plugins = (config.plugins || []).concat([
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
   // https://github.com/ampedandwired/html-webpack-plugin
-  new HtmlWebpackPlugin({
+  new HtmlWebpackPlugin(config.htmlOptions({
     filename: 'index.html',
     template: 'src/index.jade',
     inject: true
-  })
+  }))
 ])
 
 module.exports = config
