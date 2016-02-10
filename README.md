@@ -24,4 +24,8 @@ npm test
 * Fade in content pieces
 * Privacy policy
 * Google analytics
+* Setup server with
+    * Node
+    * SSL (via Let's Encrypt!)
+    * Slick deployment system
 
