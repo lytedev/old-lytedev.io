@@ -55,7 +55,6 @@
           | have website or software work done! If you'd like, here are some
           | links to some of my stuff.
 
-
         hr
 
         cta-button.button--block-if-mobile(href="https://github.com/lytedev")
@@ -78,6 +77,17 @@
         //- hr
 
         //- next-section.scroll-link(href="#contact")
+
+    content-block#footer(:styles="{ backgroundColor: '#222', color: '#fff', textShadow: '0px 1px 1px rgba(0, 0, 0, 0.5)' }")
+      previous-section.scroll-link(href="#contact")
+
+      p Copyright &copy; 2016
+
+      p Daniel Flanagan
+
+      p All rights reserved.
+
+      p: a(href="#privacy-policy") Privacy Policy
 
 </template>
 
