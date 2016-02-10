@@ -1,10 +1,9 @@
 <template lang="jade">
 
   #app
-    header
-      jumbotron
+    jumbotron
 
-    main-content
+    component(:is="currentView" keep-alive)
 
     content-block#footer(:styles="{ backgroundColor: '#222', color: '#fff', textShadow: '0px 1px 1px rgba(0, 0, 0, 0.5)' }")
       previous-section.scroll-link(href="#contact")
@@ -35,8 +34,11 @@
           return false
 
   module.exports =
+    data: ->
+      currentView: "mainContent"
     components:
       mainContent: require './components/MainContent.vue'
+      privacyPolicy: require './components/PrivacyPolicy.vue'
       jumbotron: require './components/Jumbotron'
       contentBlock: require './components/ContentBlock'
       nextSection: require './components/NextSection'

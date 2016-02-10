@@ -1,14 +1,15 @@
 <template lang="jade">
 
-  .jumbotron#intro
-    a(href="/" v-on:click.prevent="0"): img.icon(src="../assets/icon.png")
-    a(href="/" v-on:click.prevent="0"): img.banner(src="../assets/banner.png")
+  .jumbotron.content-block#intro
+    header
+      a(href="/" v-on:click.prevent="0"): img.icon(src="../assets/icon.png")
+      a(href="/" v-on:click.prevent="0"): img.banner(src="../assets/banner.png")
 
-    .calls-to-action
-      cta-button.button--inline.scroll-link(href="#about" text="About Me")
-      cta-button.button--inline.scroll-link(href="#contact" text="Get In Touch")
+      .calls-to-action
+        cta-button.button--inline.scroll-link(href="#about" text="About Me")
+        cta-button.button--inline.scroll-link(href="#contact" text="Get In Touch")
 
-    next-section.scroll-link(href="#about")
+      next-section.scroll-link(href="#about")
 
 </template>
 
@@ -63,11 +64,8 @@
     flex-direction column
     justify-content center
 
-    height 100vh
-
     background-color #222
     background-image url('../assets/kc.jpg')
-    background-size cover
     text-align center
     padding 3em
 
