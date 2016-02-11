@@ -7,7 +7,7 @@
 
       p Daniel Flanagan
 
-      p All rights reserved.
+      p All rights reserved
 
       p: a.scroll-link(v-on:click.prevent="showPrivacyPolicy") Privacy Policy
 

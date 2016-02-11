@@ -20,7 +20,6 @@ npm test
 
 ## To Do
 
-* Privacy policy
 * Setup server with
     * Node
     * SSL (via Let's Encrypt!)
