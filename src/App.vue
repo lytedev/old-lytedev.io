@@ -2,28 +2,40 @@
 
   #app
     jumbotron
-    component(:is="currentView" keep-alive)
+    component(:is="currentView" transition="scrollTo" transition-mode="out-in")
     site-footer
 
 </template>
 
 <script lang="coffee">
 
+  Vue = require 'vue'
   jQuery = require 'jquery'
+
+  Vue.transition 'scrollTo',
+    css: false
+    enter: (el, done) ->
+      jQuery('html, body').animate
+        scrollTop: jQuery(el).offset().top
+      , 1000
+    enterCancelled: (el) ->
+      jQuery(el).stop()
 
   module.exports =
     data: ->
       currentView: "mainContent"
+
     events:
-      'refresh-smooth-scroll-anchor-links': ->
-        # smoothScrollAnchorLinks()
-      'show-content': (content) ->
-        # smoothScrollAnchorLinks()
+      'show-content': (content, scrollTo) ->
         this.currentView = content
+        if scrollTo
+          this.$emit 'scroll-to-element', scrollTo
+
       'scroll-to-element': (selector) ->
         jQuery('html, body').animate
           scrollTop: jQuery(selector).offset().top
         , 1000
+
     components:
       mainContent: require './components/MainContent.vue'
       privacyPolicy: require './components/PrivacyPolicy.vue'

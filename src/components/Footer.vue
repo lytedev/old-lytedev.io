@@ -9,7 +9,7 @@
 
       p All rights reserved.
 
-      p: a.scroll-link(href="#privacy-policy" v-on:click.prevent="showPrivacyPolicy") Privacy Policy
+      p: a.scroll-link(v-on:click.prevent="showPrivacyPolicy") Privacy Policy
 
 </template>
 

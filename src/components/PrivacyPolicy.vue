@@ -1,20 +1,28 @@
 <template lang="jade">
 
-  content-block#privacy-policy(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAVklEQVQIWwXBQQ5AMBBA0V902gQnEScRsbZwBHvXFUssqSjGe2boasUofB9eBCsOK8K67ZhpbHSZZ8o8J1E4QyA+D6kVTN9WeoWDwnm8OO4YeRXSLOMH8/4diwIk8l0AAAAASUVORK5CYII=\")', color: '#fff' }")
+  #privacy-policy-container
     slot
-      previous-section.scroll-link(href="#intro")
+      content-block#privacy-policy(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAVklEQVQIWwXBQQ5AMBBA0V902gQnEScRsbZwBHvXFUssqSjGe2boasUofB9eBCsOK8K67ZhpbHSZZ8o8J1E4QyA+D6kVTN9WeoWDwnm8OO4YeRXSLOMH8/4diwIk8l0AAAAASUVORK5CYII=\")', color: '#fff' }")
+        slot
+          previous-section.scroll-link(href="#intro")
 
-      p: a.scroll-link(href="#about" v-on:click.prevent="showMainContent") Done here?
+          p: a.scroll-link(href="#about" v-on:click.prevent="showMainContent") Done here?
 
-      h1.section-head Privacy Policy
+          h1.section-head Privacy Policy
 
-      p I'm a freelance software engineer who specializes in web
-        | technologies. I work with computers and the internet and love
-        | every second of it.
+          p Like millions of other websites, I use Google Analytics on lytedev.io. It records data about my visitors -- that's you! It tracks what website you came form to get here, how long you stay, some information about the device you're using to view lytedev.io, and some other information.
 
-      p: a.scroll-link(href="#about" v-on:click.prevent="showMainContent") Done here?
+          p What do I do with this information? It helps me better understand the kind of people come to my site and what content they’re reading. This allows me to make better decisions about design and writing.
 
-      next-section.scroll-link(:styles="" href="#footer")
+          p Occasionally, I will compile aggregate statistics about the number of visitors this site receives and browsers being used. No personally identifying data is included in this type of reporting.
+
+          p= "All of my activity falls within the bounds of the "
+            a(href="http://www.google.com/analytics/terms/us.html" target="_blank") Google Analytics Terms of Service
+            | .
+
+          p: a.scroll-link(href="#about" v-on:click.prevent="showMainContent") Done here?
+
+          next-section.scroll-link(:styles="" href="#footer")
 
 </template>
 
@@ -24,6 +32,9 @@
     methods:
       showMainContent: ->
         this.$dispatch('show-content', 'mainContent')
+
+    ready: (a, b, c) ->
+      console.log a, b, c, "lol"
 
     components:
       jumbotron: require './Jumbotron'
