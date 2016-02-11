@@ -6,8 +6,8 @@
       a(href="/" v-on:click.prevent="0"): img.banner(src="../assets/banner.png")
 
       .calls-to-action
-        cta-button.button--inline.scroll-link(href="#about" text="About Me")
-        cta-button.button--inline.scroll-link(href="#contact" text="Get In Touch")
+        cta-button.button--inline.scroll-link(text="About Me" v-on:click.stop.prevent="showAbout")
+        cta-button.button--inline.scroll-link(text="Get In Touch" v-on:click.stop.prevent="showContact")
 
       next-section.scroll-link(href="#about")
 
@@ -58,6 +58,14 @@
       opacity 0
     100%
       opacity 1
+
+  @keyframes fadeinlatehalf
+    0%
+      opacity 0
+    50%
+      opacity 0
+    100%
+      opacity 0.5
 
   .jumbotron
     display flex
@@ -112,7 +120,7 @@
 
     .next-section
       position relative
-      animation fadeinlate 6s, slideuplate 6s
+      animation fadeinlatehalf 6s, slideuplate 6s
 
     /* +first-breakpoint-response() */
 
@@ -121,6 +129,13 @@
 <script lang="coffee">
 
   module.exports =
+    methods:
+      showAbout: ->
+        this.$dispatch 'show-content', 'mainContent', '#about'
+
+      showContact: ->
+        this.$dispatch 'show-content', 'mainContent', '#contact'
+
     components:
       ctaButton: require './Button'
       nextSection: require './NextSection'
