@@ -2,19 +2,8 @@
 
   #app
     jumbotron
-
     component(:is="currentView" keep-alive)
-
-    content-block#footer(:styles="{ backgroundColor: '#222', color: '#fff', textShadow: '0px 1px 1px rgba(0, 0, 0, 0.5)' }")
-      previous-section.scroll-link(href="#contact")
-
-      p Copyright &copy; 2016
-
-      p Daniel Flanagan
-
-      p All rights reserved.
-
-      p: a(href="#privacy-policy") Privacy Policy
+    site-footer
 
 </template>
 
@@ -22,20 +11,19 @@
 
   jQuery = require 'jquery'
 
-  jQuery ->
-    jQuery('a[href*="#"]:not([href="#"])').click (event) ->
-      if location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//,'') and location.hostname == this.hostname
-        target = jQuery this.hash
-        if target.length
-          event.preventDefault()
-          jQuery('html, body').animate
-            scrollTop: target.offset().top
-          , 1000
-          return false
-
   module.exports =
     data: ->
       currentView: "mainContent"
+    events:
+      'refresh-smooth-scroll-anchor-links': ->
+        # smoothScrollAnchorLinks()
+      'show-content': (content) ->
+        # smoothScrollAnchorLinks()
+        this.currentView = content
+      'scroll-to-element': (selector) ->
+        jQuery('html, body').animate
+          scrollTop: jQuery(selector).offset().top
+        , 1000
     components:
       mainContent: require './components/MainContent.vue'
       privacyPolicy: require './components/PrivacyPolicy.vue'
@@ -44,6 +32,7 @@
       nextSection: require './components/NextSection'
       previousSection: require './components/PreviousSection'
       ctaButton: require './components/Button.vue'
+      siteFooter: require './components/Footer.vue'
 
 </script>
 

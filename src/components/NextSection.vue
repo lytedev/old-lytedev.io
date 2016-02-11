@@ -1,6 +1,6 @@
 <template lang="jade">
 
-  a.next-section(v-bind:style="styles" href="{{ href }}"): i.fa.fa-angle-down.fa-2x
+  a.next-section(v-bind:style="styles" v-on:click.prevent.stop="scrollTo(href)"): i.fa.fa-angle-down.fa-2x
 
 </template>
 
@@ -24,6 +24,10 @@
 <script lang="coffee">
 
   module.exports =
+    methods:
+      scrollTo: (selector) ->
+        this.$dispatch 'scroll-to-element', selector
+
     props: [
       'href'
       'styles'

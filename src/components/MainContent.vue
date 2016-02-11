@@ -1,5 +1,6 @@
 <template lang="jade">
 
+  #index
   content-block#about(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAQklEQVQIWy2MMRGAQBDEkn0vb4UCN/hCASpQggI45hiqNEm8jrWIJIEMaBpg4LnNyhDzoEEF7090X2alS3tQBOGPXzP6C7P9CQ8hAAAAAElFTkSuQmCC\")', color: '#fff' }")
     slot
       previous-section.scroll-link(href="#intro")
