@@ -2,7 +2,7 @@
 
   #privacy-policy-container
     slot
-      content-block#privacy-policy(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAVklEQVQIWwXBQQ5AMBBA0V902gQnEScRsbZwBHvXFUssqSjGe2boasUofB9eBCsOK8K67ZhpbHSZZ8o8J1E4QyA+D6kVTN9WeoWDwnm8OO4YeRXSLOMH8/4diwIk8l0AAAAASUVORK5CYII=\")', color: '#fff' }")
+      content-block#privacy-policy(:styles="{ backgroundImage: 'url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAYklEQVQIWwFXAKj/AYIRxv8pKA8ANYEXAO7e5AD3dtoA6BP+AAc/IQABaBij/xn+HwAAJAUAEfzhAEnXDAD0+PwAyBD5AAF+Mb3/IQYiAB8wBgAWC/EACZLYAA8DFAC2F+IAbmIdl+3RjvwAAAAASUVORK5CYII=\")', color: '#fff' }")
         slot
           previous-section.scroll-link(href="#intro")
 
