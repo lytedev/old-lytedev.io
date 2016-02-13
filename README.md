@@ -20,9 +20,5 @@ npm test
 
 ## To Do
 
-* Setup server with
-    * Node
-    * SSL (via Let's Encrypt!)
-    * Slick deployment system
 * Fade in content pieces
 
