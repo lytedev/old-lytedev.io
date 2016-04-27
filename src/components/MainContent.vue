@@ -9,7 +9,7 @@
           h1.section-head Hello! My name is Daniel and I live in Kansas City,
             | Missouri.
 
-          p I'm a freelance software engineer who specializes in web
+          p I'm a software engineer who specializes in web
             | technologies. I work with computers and the internet and love
             | every second of it.
 
@@ -21,7 +21,7 @@
 
           p The internet is a universe of opportunity. I have a knack and a passion for building powerful and highly useful, usable experiences that can greatly simplify lives or simply draw a crowd.
 
-          p Technology is an ever-changing and constantly-shifting field of work. I relish in the quick-moving world of deprecation and development cycles and am constantly searching for and trying to create the next cool thing.
+          p Technology is an ever-changing and constantly-shifting field of work. I relish in the quick-moving world of software development cycles and ever-new and upcoming technologies. I am constantly searching for and trying to create the next cool thing.
 
           p So this isn't just a job for me.
 
@@ -33,7 +33,8 @@
         slot
           previous-section.scroll-link(href="#belief")
 
-          p If you're looking for a software engineer or web developer and
+          p
+            = "If you're looking for a software engineer or web developer and "
             = "need convincing that I'm worth contacting, you can "
             a(target="_blank" href="https://docs.google.com/document/d/1fPVh7DGWDL7TxYdE9Rz5iNSZQrAhlxdFaCuONYgcs64/edit?usp=sharing")
               | find my resume on Google Drive
@@ -44,7 +45,7 @@
 
           p I'm always on the lookout for cool opportunities. If you think
             | you've got one, feel free to at least shoot me an email - especially
-            | if you're a business or organization here in Kansas City looking to
+            | if you're a business or organization looking to
             | have website or software work done! If you'd like, here are some
             | links to some of my stuff.
 
