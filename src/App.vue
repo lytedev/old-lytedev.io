@@ -52,7 +52,7 @@
 
   @require './assets/styles/mixins'
 
-  @import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css)
+  @import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css)
   @import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700)
   @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css)
 
